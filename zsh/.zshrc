@@ -1,0 +1,24 @@
+# Created by Zap installer
+[ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
+plug "zsh-users/zsh-autosuggestions"
+plug "zap-zsh/supercharge"
+plug "zap-zsh/zap-prompt"
+plug "zsh-users/zsh-syntax-highlighting"
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=247'
+
+# Load and initialise completion system
+autoload -Uz compinit
+compinit
+
+. "$HOME/.cargo/env"
+eval "$(starship init zsh)"
+alias nvim-nuke="rm ~/.local/state/nvim/swap/*.swp"
+
+# Set up fzf key bindings and fuzzy completion
+# Enable fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH=/usr/local/node/bin:$PATH
+
+export LS_COLORS='di=01;36:ln=01;35:so=01;35:pi=33:ex=03;31:bd=40;33;01:cd=01;33:su=37;41:sg=30;43:tw=30;42:ow=34;42'
+neofetch --ascii_colors 8 14 10
