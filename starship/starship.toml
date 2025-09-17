@@ -33,7 +33,7 @@ style = "bg:#394260"
 format = ' [[$symbol $branch ](fg:#37dccd)]($style)'
 
 [git_status]
-format = ' [$all_status$ahead_behind]($style)'
+format = ' [$all_status$ahead_behind]($style)'
 
 conflicted = "💥"
 untracked  = "" # this tracks unused gitfiles
