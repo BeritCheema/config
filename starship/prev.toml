@@ -1,0 +1,79 @@
+right_format = """
+$directory\
+$git_branch\
+$nodejs\
+$rust\
+$golang\
+$php\
+$python\
+$character"""
+format = """
+[󱃽  ](fg:#f76200)\ 
+$cmd_duration\
+"""
+[directory]
+style = "fg:#a0a9cb"
+format = "  [$path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+"hwork" = "󱅗 "
+"Projects" = "󱓟 "
+
+[git_branch]
+symbol = ""
+style = "bg:#394260"
+format = ' [[$symbol $branch ](fg:#37dccd)]($style)'
+
+[git_status]
+format = ' [$all_status$ahead_behind]($style)'
+
+conflicted = "💥"
+untracked  = "" # this tracks unused gitfiles
+stashed    = "📦"
+modified   = "⚡"
+staged     = "✅"
+deleted    = "🗑️"
+ahead      = "⇡${count}"
+behind     = "⇣${count}"
+diverged   = "⇕${ahead_count}/${behind_count}"
+
+[python]
+symbol = ""
+style = "bg:#212736"
+format = ' [[ $symbol ($version) ](fg:#769ff0 )]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[cmd_duration]
+min_time = 500
+format = "[$duration]($style)"
+style = "blue bold"
+disabled = false
+
+[aws]
+format = " ☁️ ($profile)[$region]($style) "
+style = "bold blue"
