@@ -21,6 +21,7 @@ if [ -f "$HOME/.cargo/env" ]; then
 fi
 eval "$(starship init zsh)"
 alias nvim-nuke="rm ~/.local/state/nvim/swap/*.swp"
+alias swap-starship="mv ~/.dotfiles/starship/prev.toml tmp.toml && mv ~/.dotfiles/starship/starship.toml ~/.dotfiles/starship/prev.toml && mv tmp.toml ~/.dotfiles/starship/starship.toml"
 
 # Set up fzf key bindings and fuzzy completion
 # Enable fzf
